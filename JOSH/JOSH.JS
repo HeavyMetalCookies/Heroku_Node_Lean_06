@@ -21,7 +21,7 @@
                 if( xhr_req.readyState===4 ){
                     
                    $( document.body ).append(
-                        $("<div>").text( xhr_req.responseText )
+                        $("<pre>").text( xhr_req.responseText )
     
                     );;
 
