@@ -35,6 +35,9 @@
     //: HN5_Wri_Hea_200         : Write head with 200 OK
     //: HN5_Pri_sob_ASA_cof_ros : Print sob's .cof & .ros
 
+    //: HN6_Ser_Fil_JAS
+    //: HN6_Ser_Fil_HTM
+
 //:IMPORTS:
 
     const  D_U = process.env.DATABASE_URL ;          
@@ -81,6 +84,44 @@ const HN5_NEW_sob=function( /** void **/ ){ "use strict"
 
     };;Object.seal( HN5_sob     );
     return( HN5_sob /** sob **/ );
+};;
+
+const HN6_Ser_Fil_JAS =function( sob ){ "use strict"
+
+    var pof=( sob.dat ); //:pof[ path_of_file (fil_pat) ]
+    
+    fs.readFile( pof,function(obj_err, cof ){
+    "use strict"
+
+        if(obj_err){
+
+            HN5_End_002( sob, "[HN6_E01]");
+        }else{
+
+            var mit=( "text/javascript" ); //:MimeType
+            HN5_Wri_Hea_200(sob, { "Content-Type": mit } );
+            HN5_End_003( sob, cof , "utf-8" );
+        };;
+    });;
+};;
+
+const HN6_Ser_Fil_HTM =function( sob ){ "use strict"
+
+    var pof=( sob.dat ); //:pof[ path_of_file (fil_pat) ]
+    
+    fs.readFile( pof,function(obj_err, cof ){
+    "use strict"
+
+        if(obj_err){
+
+            HN5_End_002( sob, "[HN6_E02]");
+        }else{
+
+            var mit=( "text/html" ); //:MimeType
+            HN5_Wri_Hea_200(sob, { "Content-Type": mit } );
+            HN5_End_003( sob, cof , "utf-8" );
+        };;
+    });;
 };;
 
 const HN5_Cli_End=function( sob ){ "use strict" 
@@ -673,17 +714,17 @@ const HN2_Rou=function( req , res ){ "use strict"
     
     ,   "/S"      :[ "IGNORED"    , "HN5_Wri_sob" ]
 
-    ,   "/JQ"     
-        :[ 
-            "./node_modules/jquery/dist/jquery.js"
-        ,   "text/javascript"
-        ]
+    ,   "/JQ"   :[ "./node_modules/jquery/dist/jquery.js" ,"JS"]
+    ,   "/JOSH" :[ "./JOSH/JOSH.HTM"                      ,"HT"]
+        
                 
     };;
     tab_act={ 
         "text/plain"      : HN1_Ser_Fil
     ,   "text/html"       : HN1_Ser_Fil
     ,   "text/javascript" : HN1_Ser_Fil
+    ,   "JS"              : HN6_Ser_Fil_JAS
+    ,   "HT"              : HN6_Ser_Fil_HTM
     ,   "SQL_GET_TEST"    : HN2_SQL_Get_Tes
     
     ,   "SQL_RUN_C"       : HN4_SQL_Run_C
