@@ -29,14 +29,16 @@ $( document ).prop( "title" , "[JOSH.*]" );
             document.body=( doc_bod );  
         };;
 
-        return( doc_bod );
+        //:Don't return anything because we need to use
+        //:the jquery wrapped document body.
+        return( undefined /** void **/ );
     };;
 
-    var doc_bod = CreateDocumentBodyIfNotExists();
+    CreateDocumentBodyIfNotExists();
+    var doc_bod=$( document.body );
 
-
-    doc_bod.append([
+    doc_bod.append(
         $("<button>")
             .text( "TEST" )
             .click( CALL_REST_SERVICE )
-    ]);;
+    );;
