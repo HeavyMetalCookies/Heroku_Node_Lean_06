@@ -673,7 +673,7 @@ const HN2_Rou=function( req , res ){ "use strict"
     
     ,   "/S"      :[ "IGNORED"    , "HN5_Wri_sob" ]
 
-    ,   "/JQ      
+    ,   "/JQ"     
         :[ 
             "./node_modules/node_modules/jquery/dist/jquery.js"
         ,   "text/javascript"
