@@ -21,6 +21,9 @@ Deploy:
         --app      "prj-name" 
         --name "dab-prj-name"
 
+        ( Step 7 can be ran by filling out "EDIT_AND_RUN.SH" )
+        ( with correct values and running from command line. )
+
     LINK_REPO_TO_HEROKU_AND_DEPLOY:
 
     8. git remote add heroku "https://git.heroku.com/prj-name.git"
