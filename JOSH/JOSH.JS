@@ -21,7 +21,7 @@ $( document ).prop( "title" , "[JOSH.*]" );
 
         var url =(""                                   +""
             +"https://"                                +""
-            +"https://hn6.herokuapp.com/"              +""
+            +"hn6.herokuapp.com/"                      +""
             +"R"                                       +""
         );;
         var xhr_req = new XMLHttpRequest();
