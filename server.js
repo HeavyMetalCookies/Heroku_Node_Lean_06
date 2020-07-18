@@ -672,6 +672,13 @@ const HN2_Rou=function( req , res ){ "use strict"
     ,   "/CRUD_D" :[ "./SQL/D._"  , "SQL_RUN_D"   ]
     
     ,   "/S"      :[ "IGNORED"    , "HN5_Wri_sob" ]
+
+    ,   "/JQ      
+        :[ 
+            "./node_modules/node_modules/jquery/dist/jquery.js"
+        ,   "text/javascript"
+        ]
+                
     };;
     tab_act={ 
         "text/plain"      : HN1_Ser_Fil
