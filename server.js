@@ -675,7 +675,7 @@ const HN2_Rou=function( req , res ){ "use strict"
 
     ,   "/JQ"     
         :[ 
-            "./node_modules/node_modules/jquery/dist/jquery.js"
+            "./node_modules/jquery/dist/jquery.js"
         ,   "text/javascript"
         ]
                 
