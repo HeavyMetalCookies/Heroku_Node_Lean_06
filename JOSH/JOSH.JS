@@ -1,2 +1,2 @@
 
-$( document ).prop( "title" , "[JOSH.[HTM/JS]]" );
+$( document ).prop( "title" , "[JOSH.*]" );
