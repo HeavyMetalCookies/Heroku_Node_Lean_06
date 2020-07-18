@@ -14,11 +14,23 @@ $( document ).prop( "title" , "[JOSH.*]" );
     //:  // now make it draggable
     //:  $('#myModal').draggable();   
 
-    function SOME_FUNCTION_HERE(){
-        alert("[hello]");
+
+    const CreateDocumentBodyIfNotExists=function(){
+
+        var doc_bod =( document.body );
+        if(!doc_bod){
+            doc_bod = document.createElement("BODY");
+            document.body=( doc_bod );  
+        };;
+
+        return( doc_bod );
     };;
 
-    $("<button>")
-        .text( "TEST" )
-        .click( SOME_FUNCTION_HERE )
-    ;;
+    var doc_bod = CreateDocumentBodyIfNotExists();
+
+
+    doc_bod.append([
+        $("<button>")
+            .text( "TEST" )
+            .click( SOME_FUNCTION_HERE )
+    ]);;
