@@ -714,25 +714,33 @@ const HN2_Rou=function( req , res ){ "use strict"
     
     ,   "/S"      :[ "IGNORED"    , "HN5_Wri_sob" ]
 
-    ,   "/JQ"   :[ "./node_modules/jquery/dist/jquery.js" ,"JS"]
+    ,   "/JQ"     :[ "./node_modules/jquery/dist/jquery.js" 
+                   , "JS" ]
 
-    ,   "/JOSH" :[ "./JOSH/JOSH.HTM"                      ,"HT"]
+    ,   "/JOSH.HT":[ "./JOSH/JOSH.HTM"                      
+                   , "HT" ]
     
-    ,   "/J.JS" :[ "./JOSH/JOSH.JS"                       ,"JS"]
+    ,   "/JOSH.JS":[ "./JOSH/JOSH.JS"                       
+                   , "JS" ]
 
         //:M:Matching. Routes matching their served files.   ://
         //:-:This is so we can run files locally or on server://
         //:-:without changing the hard coded script files.   ://
         //:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM://
 
-        ,  "./node_modules/jquery/dist/jquery.js":
-          ["./node_modules/jquery/dist/jquery.js","JS"]
+        //: This hack is not going to work because
+        //: "." and ".." are not going to be allowed in URLS.
+        //: Leave this for reference so you don't try to do
+        //: this again.
 
-        ,  "./JOSH/JOSH.HTM":
-          ["./JOSH/JOSH.HTM","HT"]
-
-        ,  "./JOSH/JOSH.JS":
-          ["./JOSH/JOSH.JS","JS"]
+        //:  ,  "./node_modules/jquery/dist/jquery.js":
+        //:    ["./node_modules/jquery/dist/jquery.js","JS"]
+        //:  
+        //:  ,  "./JOSH/JOSH.HTM":
+        //:    ["./JOSH/JOSH.HTM","HT"]
+        //:  
+        //:  ,  "./JOSH/JOSH.JS":
+        //:    ["./JOSH/JOSH.JS","JS"]
 
         //:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM://
                 
