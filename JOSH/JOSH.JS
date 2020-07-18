@@ -17,7 +17,26 @@ $( document ).prop( "title" , "[JOSH.*]" );
 
     const CALL_REST_SERVICE=function(){ "use strict"
 
-        alert("[TODO:CALL_REST_SERVICE]");
+        //:alert("[TODO:CALL_REST_SERVICE]");
+
+        var url =(""                                   +""
+            +"https://"                                +""
+            +"https://hn6.herokuapp.com/"              +""
+            +"R"                                       +""
+        );;
+        var xhr_req = new XMLHttpRequest();
+            xhr_req.open("GET",url);
+            xhr_req.send();
+            xhr_req.onreadystatechange=(e)=>{
+                console.log(e                     );
+                console.log( xhr_req.status       );
+                console.log( xhr_req.readyState   );
+                console.log( xhr_req.responseText );
+                if( xhr_req.readyState===4 ){
+                    setTimeout( ()=>{ alert("4"); });
+                    console.log("DONE");
+                };;
+            };;
 
     };;
 
