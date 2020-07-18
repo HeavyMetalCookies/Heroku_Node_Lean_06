@@ -1,19 +1,5 @@
 
-$( document ).prop( "title" , "[JOSH.*]" );
-
-    
-    //:nice to have, but let's get basic functionality
-    //:working first.
-    //:
-    //:Todo: Create some type of movable dialog on this
-    //:      page using jquery.
-
-    //:  // first invoke jquery modal the standard way
-    //:  $('#myModal').modal();
-    //:  
-    //:  // now make it draggable
-    //:  $('#myModal').draggable();   
-
+    $( document ).prop( "title" , "[JOSH.*]" );
 
     const CALL_REST_SERVICE=function(){ "use strict"
 
@@ -33,8 +19,12 @@ $( document ).prop( "title" , "[JOSH.*]" );
                 console.log( xhr_req.readyState   );
                 console.log( xhr_req.responseText );
                 if( xhr_req.readyState===4 ){
-                    setTimeout( ()=>{ alert("4"); });
-                    console.log("DONE");
+                    
+                   $( document.body ).append(
+                        $(<div>).text( xhr_req.responseText )
+    
+                    );;
+
                 };;
             };;
 
