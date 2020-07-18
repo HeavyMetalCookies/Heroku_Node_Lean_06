@@ -1,10 +1,12 @@
 //://////////////////////////////////////////////////////////://
 
-//:HN4: Heroku_Node(lean):04
+//:HN6: Heroku_Node(lean):06
 //:     HN1: Minimal example to serve Html + Javascript.
 //:     HN2: Serve File as text, promises, routing refactor.
 //:     HN3: SQL execution from file on server.
 //:     HN4: CRUD operations demonstration
+//:     HN5: Refactor to procedural and use sob everywhere.
+//:     HN6: UI calling servlet: <app_bas_url>/JOSH.HT
 
 //:FUNCTION_INDEX:
 
@@ -35,8 +37,8 @@
     //: HN5_Wri_Hea_200         : Write head with 200 OK
     //: HN5_Pri_sob_ASA_cof_ros : Print sob's .cof & .ros
 
-    //: HN6_Ser_Fil_JAS
-    //: HN6_Ser_Fil_HTM
+    //: HN6_Ser_Fil_JAS         : Serve_File: JavaScript
+    //: HN6_Ser_Fil_HTM         : Serve_File: HTML
 
 //:IMPORTS:
 
@@ -881,6 +883,8 @@ HN1_Mai();
               "/K": Routes to our "key._" file.
               "/R": SHORT path: Read    ( DEMONSTRATION )
               "/U": SHORT path: Update  ( DEMONSTRATION )
+              "HT": Shorthand for "text/html"       in router.
+              "JS": Shorthand for "text/javascript" in router.
               5190: Default Port Number if PORT undefined
               CRUD: Create_Read_Update_Delete
               DATA: Information to act on or transform somehow
@@ -899,6 +903,7 @@ HN1_Mai();
               then: Do this if promise accepted
               true: Boolean value for [  set/on ] bit.
               void: Function takes or returns nothing.
+             "/JQ": Path to serve jquery.js from
              "SQL": Structured_Query_Language (Folder)
              ROUTE: Relative url identifying page or resource
              alert: Display an alert box
@@ -952,6 +957,8 @@ HN1_Mai();
            HN5_E07: HerokuNode(lean)[ #5 ] : Error[ #7 ]
            HN5_E08: HerokuNode(lean)[ #5 ] : Error[ #8 ]
            HN5_E09: HerokuNode(lean)[ #5 ] : Error[ #9 ]
+           HN6_E01: HerokuNode(lean)[ #6 ] : Error[ #1 ]
+           HN6_E02: HerokuNode(lean)[ #6 ] : Error[ #2 ]
            IMPORTS: A list of imports at top of file.
            Minimal: No extranious moving parts.
            NOT_SET: Denotes forgot to set string value.
@@ -1005,6 +1012,8 @@ HN1_Mai();
          setHeader: Sets single header value for headers object.
          undefined: like null, but usually indicates MISTAKE.
          writeHead: Sends a response header to the request
+        "/JOSH.HT": Routes to: ./JOSH/JOSH.HTM
+        "/JOSH.JS": Routes to: ./JOSH/JOSH.JS
         JavaScript: The language used by Node.js servers
         Javascript: Poorly capitalized "JavaScript"
        "SQL_RUN_C": Tells us a CREATE function should be ran.
@@ -1019,6 +1028,7 @@ HN1_Mai();
        HN3_Run_cof: Run_contents_of_file
        HN3_Run_fas: Run_file_as_string
        Heroku_Node: Denotes a project using Heroku & Node.js
+       app_bas_url: Application_Base_Url. (root of website)
       "text/plain": "Content-Type" for plain text, NOT code.
       "use strict": Warnings are errors.
       DATABASE_URL: Database URL built into heroku machines.
@@ -1040,10 +1050,13 @@ HN1_Mai();
    HN2_SQL_Get_Tes: Get SQL file as string test.
    HN2_SQL_Get_Tes: SQL_Get_Test
    rar_daw_cof_ros: [rar_daw,cof_ros] packed into tuple.
+  "./JOSH/JOSH.JS": Actual file "/JOSH.JS" [maps/routes] to.
   "DOCUMENT_TITLE": Placeholder string.
   connectionString: Provider uses this to connect to database.
+ "./JOSH/JOSH.HTM": Actual file "/JOSH.HT" [maps/routes] to.
  "EDCL:2020_07_14": EDCL error as unique string
  "text/javascript": "Content-Type" for javascript files
+"./node_modules/jquery/dist/jquery.js" : NPM puts JQuery Here
 "ROWS_OBJECT_DOES_NOT_EXIST" :: Helpful info for example code.
 "ROWS_OBJECT_IS_EMPTY_ARRAY" :: Helpful info for example code.
 FILE_SCOPE_VARIABLES :::::::::: File scope in the C99 sense.
@@ -1059,6 +1072,8 @@ HN5_Wri_sob ::::::::::::::::::: Write sob object to response
 HN5_Wri_sob_AND_end ::::::::::: Write sob and end response
 HN5_err_CTO_str ::::::::::::::: Error ConvertTO string
 HN5_sob ::::::::::::::::::::::: State_Object_Bundle
+HN6_Ser_Fil_HTM ::::::::::::::: Serve_File: HTML
+HN6_Ser_Fil_JAS ::::::::::::::: Serve_File: JavaScript
 const A=(B)=>{...} :::::::::::: function "A" taking param "B"
 rejectUnauthorized :::::::::::: verifying server identity?
 
