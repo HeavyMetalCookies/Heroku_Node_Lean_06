@@ -15,6 +15,12 @@ $( document ).prop( "title" , "[JOSH.*]" );
     //:  $('#myModal').draggable();   
 
 
+    const CALL_REST_SERVICE=function(){ "use strict"
+
+        alert("[TODO:CALL_REST_SERVICE]");
+
+    };;
+
     const CreateDocumentBodyIfNotExists=function(){
 
         var doc_bod =( document.body );
@@ -32,5 +38,5 @@ $( document ).prop( "title" , "[JOSH.*]" );
     doc_bod.append([
         $("<button>")
             .text( "TEST" )
-            .click( SOME_FUNCTION_HERE )
+            .click( CALL_REST_SERVICE )
     ]);;
