@@ -27,7 +27,6 @@
 
                 };;
             };;
-
     };;
 
     const CreateDocumentBodyIfNotExists=function(){
